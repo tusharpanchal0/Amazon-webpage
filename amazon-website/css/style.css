@@ -1,0 +1,662 @@
+/* =========================================================
+   Amazon.in Clone - Responsive Stylesheet
+   Breakpoints: mobile (<768px), tablet (768-1099px), desktop (1100px+)
+   ========================================================= */
+
+/* ---------- Reset & variables ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --header-bg: #131921;
+  --nav-bg: #232f3e;
+  --footer-bg: #232f3e;
+  --footer-top: #485769;
+  --accent: #febd69;
+  --link: #007185;
+  --page-bg: #d3d3d3;
+  --overlap: 0px; /* how much the first card row overlaps the slider */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Verdana, sans-serif;
+  background-color: var(--page-bg);
+  color: #111;
+  line-height: 1.4;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+/* ---------- Header ---------- */
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  padding: 8px 14px;
+  background-color: var(--header-bg);
+  color: #fff;
+}
+
+.logo {
+  display: flex;
+  align-items: flex-end;
+  flex-shrink: 0;
+  padding: 4px 6px;
+  border: 2px solid transparent;
+}
+
+.logo:hover {
+  border-color: #fff;
+}
+
+.logo img {
+  width: 97px;
+  height: 37px;
+  object-fit: contain;
+}
+
+.logo-in {
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: 2px;
+  margin-bottom: 3px;
+}
+
+.location {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  flex-shrink: 0;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.location div {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.location small {
+  font-size: 11px;
+  letter-spacing: 0.6px;
+  color: lightgray;
+}
+
+.location strong {
+  font-size: 13.5px;
+}
+
+/* Search bar */
+.search {
+  display: flex;
+  flex: 1 1 280px;
+  min-width: 0;
+  height: 40px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.search select {
+  width: 60px;
+  flex-shrink: 0;
+  border: none;
+  background: #e6e6e6;
+  color: #333;
+  font-size: 12px;
+  padding: 0 4px;
+  border-right: 1px solid #cdcdcd;
+}
+
+.search input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  padding: 0 12px;
+  font-size: 15px;
+}
+
+.search input:focus,
+.search select:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+.search button {
+  width: 46px;
+  flex-shrink: 0;
+  border: none;
+  background: var(--accent);
+  color: #000;
+  font-size: 18px;
+}
+
+.search button:hover {
+  background: #f3a847;
+}
+
+/* Language / account / returns / cart */
+.language {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.flag {
+  width: 20px;
+  height: 14px;
+  border-radius: 1px;
+  background: linear-gradient(to bottom, #ff9933 33.3%, #fff 33.3% 66.6%, #138808 66.6%);
+}
+
+.header-link {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  line-height: 1.25;
+  padding: 4px 6px;
+  border: 2px solid transparent;
+}
+
+.header-link:hover {
+  border-color: #fff;
+}
+
+.header-link small {
+  font-size: 12px;
+}
+
+.header-link strong {
+  font-size: 13.8px;
+}
+
+.cart {
+  flex-shrink: 0;
+  padding: 2px 4px;
+  border: 2px solid transparent;
+}
+
+.cart:hover {
+  border-color: #fff;
+}
+
+.cart img {
+  height: 40px;
+  width: auto;
+}
+
+/* ---------- Second navbar ---------- */
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 10px;
+  background-color: var(--nav-bg);
+  color: #fff;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+
+.navbar::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-link {
+  flex-shrink: 0;
+  padding: 10px 10px;
+  font-size: 13px;
+  border: 2px solid transparent;
+}
+
+.nav-link:hover {
+  border-color: #fff;
+}
+
+/* ---------- Hero slider ---------- */
+.hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #f3e9db;
+}
+
+.slide {
+  display: none;
+}
+
+.slide.active {
+  display: block;
+  animation: fade 1s ease;
+}
+
+.slide img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: 40% 0;
+}
+
+@keyframes fade {
+  from { opacity: 0.4; }
+  to   { opacity: 1; }
+}
+
+/* soft fade to page colour at the bottom of the hero, like Amazon */
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 40%;
+  background: linear-gradient(to bottom, rgba(211, 211, 211, 0), var(--page-bg));
+  pointer-events: none;
+}
+
+.arrow {
+  position: absolute;
+  top: 25%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 40px;
+  height: 80px;
+  border: 2px solid transparent;
+  background: transparent;
+  color: #111;
+  font-size: 26px;
+  border-radius: 4px;
+}
+
+.arrow:hover,
+.arrow:focus-visible {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.25);
+  outline: none;
+}
+
+.arrow.prev { left: 4px; }
+.arrow.next { right: 4px; }
+
+.dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(var(--overlap) + 12px);
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border: none;
+  border-radius: 50%;
+  background-color: #bbb;
+  transition: background-color 0.4s ease;
+}
+
+.dot.active {
+  background-color: #717171;
+}
+
+/* ---------- Page body ---------- */
+.page {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 12px 20px;
+}
+
+/* ---------- Card grid ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.card-grid-top {
+  position: relative;
+  z-index: 2;
+  margin-top: 12px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+  background: #fff;
+}
+
+.card h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.card-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  flex: 1;
+}
+
+.card-item {
+  font-size: 13px;
+  color: #555;
+}
+
+.card-item img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 186 / 116;
+  object-fit: cover;
+  margin-bottom: 5px;
+}
+
+.see-more {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 15px;
+  color: var(--link);
+}
+
+.see-more:hover,
+.scroller h2 a:hover {
+  color: #c7511f;
+  text-decoration: underline;
+}
+
+/* ---------- Horizontal scrolling product rows ---------- */
+.scroller {
+  margin: 16px 0;
+  padding: 18px 18px 14px;
+  background: #fff;
+}
+
+.scroller h2 {
+  font-size: 18px;
+  margin-bottom: 14px;
+}
+
+.scroller h2 a {
+  font-size: 15px;
+  font-weight: normal;
+  color: var(--link);
+  white-space: nowrap;
+}
+
+.scroller-track {
+  display: flex;
+  align-items: flex-end;
+  gap: 18px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scroll-snap-type: x proximity;
+}
+
+.scroller-track img {
+  flex-shrink: 0;
+  height: 200px;
+  width: auto;
+  max-width: none;
+  scroll-snap-align: start;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  color: lightgray;
+  background: var(--footer-bg);
+}
+
+.back-to-top {
+  display: block;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 13px;
+  color: #fff;
+  background: var(--footer-top);
+}
+
+.back-to-top:hover {
+  background: #5b6b80;
+}
+
+.footer-main {
+  padding: 36px 20px 30px;
+}
+
+.footer-cols {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-col h3,
+.footer-mini h4 {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.footer-col a {
+  display: block;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.footer-col a:hover,
+.footer-mini a:hover {
+  text-decoration: underline;
+  color: #fff;
+}
+
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  padding: 22px 0;
+  border-top: 1px solid rgb(120, 120, 120);
+}
+
+.footer-logo img {
+  width: 80px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.footer-bottom {
+  padding: 0 20px 36px;
+}
+
+.footer-minis {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 16px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-mini h4 {
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+
+.footer-mini a {
+  font-size: 12px;
+  color: #999;
+}
+
+/* ---------- Toast (search demo message) ---------- */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  z-index: 100;
+  max-width: 90%;
+  padding: 12px 20px;
+  border-radius: 6px;
+  background: #111;
+  color: #fff;
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* =========================================================
+   MOBILE  (below 768px)
+   ========================================================= */
+@media (max-width: 767px) {
+  .header {
+    gap: 6px 8px;
+    padding: 8px 10px;
+  }
+
+  .logo {
+    margin-right: auto;
+  }
+
+  .language,
+  .returns,
+  .location strong {
+    display: none;
+  }
+
+  /* delivery location as a thin strip below the search bar */
+  .location {
+    order: 6;
+    flex-basis: 100%;
+    font-size: 14px;
+    align-items: center;
+  }
+
+  .location small {
+    font-size: 12px;
+  }
+
+  .account small {
+    display: none;
+  }
+
+  .account strong {
+    font-size: 13px;
+  }
+
+  .search {
+    order: 5;
+    flex-basis: 100%;
+  }
+}
+
+/* =========================================================
+   TABLET  (768px and above)
+   ========================================================= */
+@media (min-width: 768px) {
+  .slide img {
+    height: auto;
+    aspect-ratio: 3000 / 1200;
+    object-position: center;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-minis {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .arrow {
+    width: 56px;
+    height: 110px;
+    font-size: 32px;
+  }
+
+  /* tablet: cards overlap slider a little */
+  :root {
+    --overlap: 8vw;
+  }
+
+  .card-grid-top {
+    margin-top: calc(-1 * var(--overlap));
+  }
+}
+
+/* =========================================================
+   DESKTOP  (1100px and above)
+   ========================================================= */
+@media (min-width: 1100px) {
+  :root {
+    --overlap: min(330px, 17vw);
+  }
+
+  .header {
+    flex-wrap: nowrap;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .footer-cols {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Tablet only: search bar moves to its own row below the header icons */
+@media (min-width: 768px) and (max-width: 1099px) {
+  .header {
+    flex-wrap: wrap;
+  }
+
+  .search {
+    order: 5;
+    flex-basis: 100%;
+  }
+
+  .location {
+    margin-right: auto;
+  }
+}

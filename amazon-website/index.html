@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Amazon.in clone - responsive online shopping website built with HTML, CSS and JavaScript.">
+  <title>Online Shopping Site in India | Amazon.in</title>
+  <link rel="icon" type="image/x-icon" href="images/amazonfavicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header">
+    <a href="#" class="logo" aria-label="Amazon.in home">
+      <img src="images/ama.png" alt="Amazon">
+      <span class="logo-in">.in</span>
+    </a>
+
+    <div class="location">
+      <i class="fa-solid fa-location-dot"></i>
+      <div>
+        <small>Delivering to Delhi 110003</small>
+        <strong>Update location</strong>
+      </div>
+    </div>
+
+    <form class="search" id="searchForm" role="search">
+      <select id="searchCategory" aria-label="Search category">
+            <option value="alexa-skills">Alexa Skills</option>
+            <option value="amazon-devices">Amazon Devices</option>
+            <option value="fashion">Amazon Fashion</option>
+            <option value="nowstore">Amazon Fresh</option>
+            <option value="aps" selected>All Categories</option>
+            <option value="freshmeat">Amazon Fresh Meat</option>
+            <option value="amazon-pharmacy">Amazon Pharmacy</option>
+            <option value="appliances">Appliances</option>
+            <option value="mobile-apps">Apps &amp; Games</option>
+            <option value="audible">Audible Audiobooks</option>
+            <option value="baby">Baby</option>
+            <option value="beauty">Beauty</option>
+            <option value="stripbooks">Books</option>
+            <option value="automotive">Car &amp; Motorbike</option>
+            <option value="apparel">Clothing &amp; Accessories</option>
+            <option value="collectibles">Collectibles</option>
+            <option value="computers">Computers &amp; Accessories</option>
+            <option value="todays-deals">Deals</option>
+            <option value="electronics">Electronics</option>
+            <option value="furniture">Furniture</option>
+            <option value="lawngarden">Garden &amp; Outdoors</option>
+            <option value="gift-cards">Gift Cards</option>
+            <option value="grocery">Grocery &amp; Gourmet Foods</option>
+            <option value="hpc">Health &amp; Personal Care</option>
+            <option value="kitchen">Home &amp; Kitchen</option>
+            <option value="industrial">Industrial &amp; Scientific</option>
+            <option value="jewelry">Jewellery</option>
+            <option value="digital-text">Kindle Store</option>
+            <option value="luggage">Luggage &amp; Bags</option>
+            <option value="luxury-beauty">Luxury Beauty</option>
+            <option value="dvd">Movies &amp; TV Shows</option>
+            <option value="digital-music">MP3 Music</option>
+            <option value="popular">Music</option>
+            <option value="mi">Musical Instruments</option>
+            <option value="office-products">Office Products</option>
+            <option value="pets">Pet Supplies</option>
+            <option value="instant-video">Prime Video</option>
+            <option value="shoes">Shoes &amp; Handbags</option>
+            <option value="software">Software</option>
+            <option value="sporting">Sports, Fitness &amp; Outdoors</option>
+            <option value="specialty-aps-sns">Subscribe &amp; Save</option>
+            <option value="home-improvement">Tools &amp; Home Improvement</option>
+            <option value="toys">Toys &amp; Games</option>
+            <option value="under-ten-dollars">Under ₹500</option>
+            <option value="videogames">Video Games</option>
+            <option value="watches">Watches</option>
+      </select>
+      <input type="search" id="searchInput" placeholder="Search Amazon.in" aria-label="Search Amazon.in">
+      <button type="submit" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+
+    <div class="language">
+      <span class="flag" aria-hidden="true"></span>
+      <strong>EN</strong>
+    </div>
+
+    <a href="#" class="header-link account">
+      <small>Hello, sign in</small>
+      <strong>Account &amp; Lists</strong>
+    </a>
+
+    <a href="#" class="header-link returns">
+      <small>Returns</small>
+      <strong>&amp; Orders</strong>
+    </a>
+
+    <a href="#" class="cart" aria-label="Cart">
+      <img src="images/cart.png" alt="Cart">
+    </a>
+  </header>
+
+  <!-- ============ SECOND NAVBAR ============ -->
+  <nav class="navbar">
+        <a href="#" class="nav-link"><i class="fa-solid fa-bars"></i> All</a>
+        <a href="#" class="nav-link">Fresh</a>
+        <a href="#" class="nav-link">Amazon miniTV</a>
+        <a href="#" class="nav-link">Sell</a>
+        <a href="#" class="nav-link">Best Sellers</a>
+        <a href="#" class="nav-link">Mobiles</a>
+        <a href="#" class="nav-link">Today's Deals</a>
+        <a href="#" class="nav-link">Customer Service</a>
+        <a href="#" class="nav-link">Prime</a>
+        <a href="#" class="nav-link">Electronics</a>
+        <a href="#" class="nav-link">Amazon Pay</a>
+        <a href="#" class="nav-link">New Releases</a>
+        <a href="#" class="nav-link">Home &amp; Kitchen</a>
+        <a href="#" class="nav-link">Computers</a>
+        <a href="#" class="nav-link">Books</a>
+  </nav>
+
+  <main>
+    <!-- ============ HERO SLIDER ============ -->
+    <section class="hero" id="hero" aria-label="Offers">
+      <div class="slides">
+        <div class="slide active"><img src="images/s1.jpg" alt="Amazon offer banner 1"></div>
+        <div class="slide"><img src="images/s2.jpg" alt="Amazon offer banner 2" loading="lazy"></div>
+        <div class="slide"><img src="images/s3.jpg" alt="Amazon offer banner 3" loading="lazy"></div>
+        <div class="slide"><img src="images/s4.jpg" alt="Amazon offer banner 4" loading="lazy"></div>
+        <div class="slide"><img src="images/s5.jpg" alt="Amazon offer banner 5" loading="lazy"></div>
+        <div class="slide"><img src="images/s6.jpg" alt="Amazon offer banner 6" loading="lazy"></div>
+        <div class="slide"><img src="images/s7.jpg" alt="Amazon offer banner 7" loading="lazy"></div>
+        <div class="slide"><img src="images/s8.jpg" alt="Amazon offer banner 8" loading="lazy"></div>
+      </div>
+      <button class="arrow prev" aria-label="Previous slide"><i class="fa-solid fa-chevron-left"></i></button>
+      <button class="arrow next" aria-label="Next slide"><i class="fa-solid fa-chevron-right"></i></button>
+      <div class="dots"><button class="dot active" aria-label="Go to slide 1"></button><button class="dot" aria-label="Go to slide 2"></button><button class="dot" aria-label="Go to slide 3"></button><button class="dot" aria-label="Go to slide 4"></button><button class="dot" aria-label="Go to slide 5"></button><button class="dot" aria-label="Go to slide 6"></button><button class="dot" aria-label="Go to slide 7"></button><button class="dot" aria-label="Go to slide 8"></button></div>
+    </section>
+
+    <div class="page">
+      <!-- ============ CARD GRID 1 ============ -->
+      <section class="card-grid card-grid-top">
+      <article class="card">
+        <h2>Revamp your home in style</h2>
+        <div class="card-items">
+          <a href="#" class="card-item">
+            <img src="images/b1.1.jpg" alt="Cushion covers, bedsheets &amp; more">
+            <span>Cushion covers, bedsheets &amp; more</span>
+          </a>
+          <a href="#" class="card-item">
+            <img src="images/b1.2.jpg" alt="Figurines, vases &amp; more">
+            <span>Figurines, vases &amp; more</span>
+          </a>
+          <a href="#" class="card-item">
+            <img src="images/b1.3.jpg" alt="Home storage">
+            <span>Home storage</span>
+          </a>
+          <a href="#" class="card-item">
+            <img src="images/b1.4.jpg" alt="Lighting solutions">
+            <span>Lighting solutions</span>
+          </a>
+        </div>
+        <a href="#" class="see-more">See more</a>
+      </article>
+      <article class="card">
+        <h2>Starting ₹149 | Headphones</h2>
+        <div class="card-items">
+          <a href="#" class="card-item">
+            <img src="images/b2.1.jpg" alt="Starting ₹249 | boAt">
+            <span>Starting ₹249 | boAt</span>
+          </a>
+          <a href="#" class="card-item">
+            <img src="images/b2.2.jpg" alt="Starting ₹249 | boult">
+            <span>Starting ₹249 | boult</span>
+          </a>
+          <a href="#" class="card-item">
+            <img src="images/b2.3.jpg" alt="Starting ₹249 | Noise">
+            <span>Starting ₹249 | Noise</span>
+          </a>
+          <a href="#" class="card-item">
+            <img src="images/b2.4.jpg" alt="Starting ₹249 | Zebronics">
+            <span>Starting ₹249 | Zebronics</span>
+          </a>
+        </div>
+        <a href="#" class="see-more">See more</a>
+      </article>
+      <article class="card">
+        <h2>Appliances for your home | Up to 55% off</h2>
+        <div class="card-items">
+          <a href="#" class="card-item">
+            <img src="images/b3.1.jpg" alt="Air conditioners">
+            <span>Air conditioners</span>
+          </a>
+          <a href="#" class="card-item">
+            <img src="images/b3.2.jpg" alt="Refrigerators">
+            <span>Refrigerators</span>
+          </a>
+          <a href="#" class="card-item">
+            <img src="images/b3.3.jpg" alt="Microwaves">
+            <span>Microwaves</span>
+          </a>
+          <a href="#" class="card-item">
+            <img src="images/b3.4.jpg" alt="Washing machines">
+            <span>Washing machines</span>
+          </a>
+        </div>
+        <a href="#" class="see-more">See more</a>
+      </article>
+      <article class="card">
+        <h2>Up to 60% off | Styles for women</h2>
+        <div class="card-items">
+          <a href="#" class="card-item">
+            <img src="images/b4.1.jpg" alt="Women's clothing">
+            <span>Women's clothing</span>
+          </a>
+          <a href="#" class="card-item">
+            <img src="images/b4.2.jpg" alt="Footwear &amp; handbags">
+            <span>Footwear &amp; handbags</span>
+          </a>
+          <a href="#" class="card-item">
+            <img src="images/b4.3.jpg" alt="Watches">
+            <span>Watches</span>
+          </a>
+          <a href="#" class="card-item">
+            <img src="images/b4.4.jpg" alt="Fashion jewellery">
+            <span>Fashion jewellery</span>
+          </a>
+        </div>
+        <a href="#" class="see-more">See more</a>
+      </article>
+      </section>
+
+    <section class="scroller">
+      <h2>Up to 60% off | Inverter batteries, kitchen tools &amp; more from local stores nearby <a href="#">See more</a></h2>
+      <div class="scroller-track">
+        <img src="images/b1.1.1.jpg" alt="Product 1" loading="lazy">
+        <img src="images/b1.1.2.jpg" alt="Product 2" loading="lazy">
+        <img src="images/b1.1.3.jpg" alt="Product 3" loading="lazy">
+        <img src="images/b1.1.4.jpg" alt="Product 4" loading="lazy">
+        <img src="images/b1.1.5.jpg" alt="Product 5" loading="lazy">
+        <img src="images/b1.1.6.jpg" alt="Product 6" loading="lazy">
+        <img src="images/b1.1.7.jpg" alt="Product 7" loading="lazy">
+        <img src="images/b1.1.8.jpg" alt="Product 8" loading="lazy">
+        <img src="images/b1.1.9.jpg" alt="Product 9" loading="lazy">
+        <img src="images/b1.1.10.jpg" alt="Product 10" loading="lazy">
+        <img src="images/b1.1.11.jpg" alt="Product 11" loading="lazy">
+      </div>
+    </section>
+
+      <!-- ============ CARD GRID 2 ============ -->
+      <section class="card-grid">
+      <article class="card">
+        <h2>Revamp your home in style</h2>
+        <div class="card-items">
+          <a href="#" class="card-item">
+            <img src="images/b1.1.jpg" alt="Cushion covers, bedsheets &amp; more">
+            <span>Cushion covers, bedsheets &amp; more</span>
+          </a>
+          <a href="#" class="card-item">
+            <img src="images/b1.2.jpg" alt="Figurines, vases &amp; more">
+            <span>Figurines, vases &amp; more</span>
+          </a>
+          <a href="#" class="card-item">
+            <img src="images/b1.3.jpg" alt="Home storage">
+            <span>Home storage</span>
+          </a>
+          <a href="#" class="card-item">
+            <img src="images/b1.4.jpg" alt="Lighting solutions">
+            <span>Lighting solutions</span>
+          </a>
+        </div>
+        <a href="#" class="see-more">See more</a>
+      </article>
+      <article class="card">
+        <h2>Starting ₹149 | Headphones</h2>
+        <div class="card-items">
+          <a href="#" class="card-item">
+            <img src="images/b2.1.jpg" alt="Starting ₹249 | boAt">
+            <span>Starting ₹249 | boAt</span>
+          </a>
+          <a href="#" class="card-item">
+            <img src="images/b2.2.jpg" alt="Starting ₹249 | boult">
+            <span>Starting ₹249 | boult</span>
+          </a>
+          <a href="#" class="card-item">
+            <img src="images/b2.3.jpg" alt="Starting ₹249 | Noise">
+            <span>Starting ₹249 | Noise</span>
+          </a>
+          <a href="#" class="card-item">
+            <img src="images/b2.4.jpg" alt="Starting ₹249 | Zebronics">
+            <span>Starting ₹249 | Zebronics</span>
+          </a>
+        </div>
+        <a href="#" class="see-more">See more</a>
+      </article>
+      <article class="card">
+        <h2>Appliances for your home | Up to 55% off</h2>
+        <div class="card-items">
+          <a href="#" class="card-item">
+            <img src="images/b3.1.jpg" alt="Air conditioners">
+            <span>Air conditioners</span>
+          </a>
+          <a href="#" class="card-item">
+            <img src="images/b3.2.jpg" alt="Refrigerators">
+            <span>Refrigerators</span>
+          </a>
+          <a href="#" class="card-item">
+            <img src="images/b3.3.jpg" alt="Microwaves">
+            <span>Microwaves</span>
+          </a>
+          <a href="#" class="card-item">
+            <img src="images/b3.4.jpg" alt="Washing machines">
+            <span>Washing machines</span>
+          </a>
+        </div>
+        <a href="#" class="see-more">See more</a>
+      </article>
+      <article class="card">
+        <h2>Up to 60% off | Styles for women</h2>
+        <div class="card-items">
+          <a href="#" class="card-item">
+            <img src="images/b4.1.jpg" alt="Women's clothing">
+            <span>Women's clothing</span>
+          </a>
+          <a href="#" class="card-item">
+            <img src="images/b4.2.jpg" alt="Footwear &amp; handbags">
+            <span>Footwear &amp; handbags</span>
+          </a>
+          <a href="#" class="card-item">
+            <img src="images/b4.3.jpg" alt="Watches">
+            <span>Watches</span>
+          </a>
+          <a href="#" class="card-item">
+            <img src="images/b4.4.jpg" alt="Fashion jewellery">
+            <span>Fashion jewellery</span>
+          </a>
+        </div>
+        <a href="#" class="see-more">See more</a>
+      </article>
+      </section>
+
+    <section class="scroller">
+      <h2>Up to 60% off | Inverter batteries, kitchen tools &amp; more from local stores nearby <a href="#">See more</a></h2>
+      <div class="scroller-track">
+        <img src="images/b1.1.1.jpg" alt="Product 1" loading="lazy">
+        <img src="images/b1.1.2.jpg" alt="Product 2" loading="lazy">
+        <img src="images/b1.1.3.jpg" alt="Product 3" loading="lazy">
+        <img src="images/b1.1.4.jpg" alt="Product 4" loading="lazy">
+        <img src="images/b1.1.5.jpg" alt="Product 5" loading="lazy">
+        <img src="images/b1.1.6.jpg" alt="Product 6" loading="lazy">
+        <img src="images/b1.1.7.jpg" alt="Product 7" loading="lazy">
+        <img src="images/b1.1.8.jpg" alt="Product 8" loading="lazy">
+        <img src="images/b1.1.9.jpg" alt="Product 9" loading="lazy">
+        <img src="images/b1.1.10.jpg" alt="Product 10" loading="lazy">
+        <img src="images/b1.1.11.jpg" alt="Product 11" loading="lazy">
+      </div>
+    </section>
+
+    <section class="scroller">
+      <h2>Up to 60% off | Inverter batteries, kitchen tools &amp; more from local stores nearby <a href="#">See more</a></h2>
+      <div class="scroller-track">
+        <img src="images/b1.1.1.jpg" alt="Product 1" loading="lazy">
+        <img src="images/b1.1.2.jpg" alt="Product 2" loading="lazy">
+        <img src="images/b1.1.3.jpg" alt="Product 3" loading="lazy">
+        <img src="images/b1.1.4.jpg" alt="Product 4" loading="lazy">
+        <img src="images/b1.1.5.jpg" alt="Product 5" loading="lazy">
+        <img src="images/b1.1.6.jpg" alt="Product 6" loading="lazy">
+        <img src="images/b1.1.7.jpg" alt="Product 7" loading="lazy">
+        <img src="images/b1.1.8.jpg" alt="Product 8" loading="lazy">
+        <img src="images/b1.1.9.jpg" alt="Product 9" loading="lazy">
+        <img src="images/b1.1.10.jpg" alt="Product 10" loading="lazy">
+        <img src="images/b1.1.11.jpg" alt="Product 11" loading="lazy">
+      </div>
+    </section>
+    </div>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <a href="#" class="back-to-top" id="backToTop">Back to top</a>
+
+    <div class="footer-main">
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h3>Get to Know Us</h3>
+          <a href="#">About Us</a>
+          <a href="#">Careers</a>
+          <a href="#">Press Releases</a>
+          <a href="#">Amazon Science</a>
+        </div>
+        <div class="footer-col">
+          <h3>Connect with Us</h3>
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">Twitter</a>
+        </div>
+        <div class="footer-col">
+          <h3>Make Money with Us</h3>
+          <a href="#">Sell on Amazon</a>
+          <a href="#">Sell under Amazon Accelerator</a>
+          <a href="#">Protect and Build Your Brand</a>
+          <a href="#">Amazon Global Selling</a>
+          <a href="#">Become an Affiliate</a>
+          <a href="#">Fulfilment by Amazon</a>
+          <a href="#">Advertise Your Products</a>
+          <a href="#">Amazon Pay on Merchants</a>
+        </div>
+        <div class="footer-col">
+          <h3>Let Us Help You</h3>
+          <a href="#">COVID-19 and Amazon</a>
+          <a href="#">Your Account</a>
+          <a href="#">Returns Centre</a>
+          <a href="#">Recalls and Product Safety Alerts</a>
+          <a href="#">100% Purchase Protection</a>
+          <a href="#">Amazon App Download</a>
+          <a href="#">Help</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-logo">
+      <img src="images/ama.png" alt="Amazon">
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-minis">
+        <div class="footer-mini">
+          <h4>AbeBooks</h4>
+          <a href="#">Books, art &amp; collectibles</a>
+        </div>
+        <div class="footer-mini">
+          <h4>Amazon Web Services</h4>
+          <a href="#">Scalable Cloud Computing Services</a>
+        </div>
+        <div class="footer-mini">
+          <h4>Audible</h4>
+          <a href="#">Download Audio Books</a>
+        </div>
+        <div class="footer-mini">
+          <h4>IMDb</h4>
+          <a href="#">Movies, TV &amp; Celebrities</a>
+        </div>
+        <div class="footer-mini">
+          <h4>Shopbop</h4>
+          <a href="#">Designer Fashion Brands</a>
+        </div>
+        <div class="footer-mini">
+          <h4>Amazon Business</h4>
+          <a href="#">Everything For Your Business</a>
+        </div>
+        <div class="footer-mini">
+          <h4>Prime Now</h4>
+          <a href="#">2-Hour Delivery on Everyday Items</a>
+        </div>
+        <div class="footer-mini">
+          <h4>Amazon Prime Music</h4>
+          <a href="#">100 million songs, ad-free. Over 15 million podcast episodes</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
